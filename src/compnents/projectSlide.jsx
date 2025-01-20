@@ -56,8 +56,12 @@ const ProjectSlide
 
           <Slider {...settings}>
             <div className=''>
-              <NewCard path={'https://shopeco.vercel.app'} title={'E-Commerce'} URL={'/Images/shopeco.png'} blurImageUrl={project1}
-                description={'Developed a responsive eCommerce platform with dynamic product listings,and user-friendly navigation, enhancing customer shopping experience.'} />
+              <NewCard path={'https://nubitsoft.com'} title={'Nubitsoft'} URL={'/Images/nubitProject.png'} blurImageUrl={project1}
+                description={'Built a responsive and visually appealing website for Nubitsoft, featuring their services, portfolio, and client testimonials. Implemented dynamic content management and intuitive navigation to enhance user engagement and showcase the brand effectively.'} />
+            </div>
+            <div className=''>
+              <NewCard path={'https://www.mysticalfragrance.com/'} title={'E-commerce'} URL={'/Images/mysticalProject.png'} blurImageUrl={project5}
+                description={'Designed and developed a visually captivating and responsive eCommerce website tailored for mystical fragrances. The platform features dynamic product showcases, seamless navigation, and a sophisticated user experience that evokes a sense of luxury and mystique. This live website is now driving sales, enabling customers to explore and purchase premium fragrances effortlessly.'} />
             </div>
             <div className=''>
               <NewCard path={'https://skypulse.vercel.app'} title={'Weather App'} URL={'/Images/project2.png'} blurImageUrl={project2}
@@ -75,10 +79,7 @@ const ProjectSlide
               <NewCard path={'https://memebuzz.vercel.app'} title={'Meme Generator'} URL={'/Images/project6.png'} blurImageUrl={project5}
                 description={'Developed a Meme Generator with features that allow users to download custom memes and add draggable, editable text over images for personalized meme creation.'} />
             </div>
-            <div className=''>
-              <NewCard path={'https://resumepulse.vercel.app'} title={'Resume Builder'} URL={'/Images/project7.png'} blurImageUrl={project5}
-                description={'Developed a dynamic Resume Builder web application enabling users to create, customize. Implemented responsive design  for an intuitive user experience.'} />
-            </div>
+           
 
           </Slider>
         </div>

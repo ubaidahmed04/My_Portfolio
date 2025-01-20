@@ -14,13 +14,13 @@ import Image from "next/image";
   <CardHeader
     shadow={false}
     floated={false}
-    className="m-0 w-full sm:w-2/5 shrink-0 rounded-b-none sm:rounded-r-none bg-none"
+    className="m-0 w-full sm:w-2/5 shrink-0 rounded-b-none sm:rounded-r-none bg-none object-contain"
   >
     <Image
-      height={500}
-      width={300}
+      height={800}
+      width={700}
       src={URL}
-      className="h-full w-full transform transition-transform duration-500 hover:scale-110 object-cover"
+      className="h-full w-full transform transition-transform duration-500 hover:scale-105 "
       alt="Project image "
       placeholder="blur"
       blurDataURL={blurImageUrl}

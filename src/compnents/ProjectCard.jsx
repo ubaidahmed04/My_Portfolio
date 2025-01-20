@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import Image from "next/image";
 
 export function ProjectCard({path,URL,title,description}) {
   return (
@@ -15,10 +16,12 @@ export function ProjectCard({path,URL,title,description}) {
     floated={false}
     // className="bg-blue-gray-100"
   >
-    <img
+    <Image
       src={URL}
       alt="card-image"
-      className="w-full  "
+      height={1000}
+      width={1000}
+      className="w-full h-full object-cover "
     />
   </CardHeader>
   <CardBody className="bg-[#373737] hover:bg-[#607D8B] cursor-pointer text-cyan-200 flex flex-col justify-between  sm:p-6">
