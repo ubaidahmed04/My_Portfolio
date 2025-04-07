@@ -28,7 +28,7 @@ function Herosection() {
   // redirect to Gmail 
 
   return (
-    <div className="flex flex-col md:flex-row sm:px-10 pt-5 pb-28 justify-between overflow-x-hidden">
+    <div className="flex flex-col md:flex-row sm:px-10 pt-5 pb-24 justify-between overflow-x-hidden">
       <motion.div
         variants={fadeIn('right', 0.2)}
         initial="hidden"

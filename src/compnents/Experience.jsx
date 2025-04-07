@@ -24,7 +24,7 @@ function Experience() {
             Nubit Soft
           </span>
           <span className={`  ${isTheme? 'text-light':'text-dark'}  `}>
-          <span className={`  ${isTheme? 'text-blue':'text-gray'}  `}>FrontEnd Developer:</span>The key to more success is to have a lot of pillows. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan luv.
+          <span className={`  ${isTheme? 'text-blue':'text-gray'}  `}>MernStack Developer:</span>The key to more success is to have a lot of pillows. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </span>
           </span>
           <span className='flex  lg:flex-col flex-wrap sm:flex-row'>
@@ -32,7 +32,7 @@ function Experience() {
             SMIT
           </span>
           <span className={`  ${isTheme? 'text-light':'text-dark'}  `}>
-          <span className={`  ${isTheme? 'text-blue':'text-gray'}  `}>Web & mobile Application developer:</span>The key to more success is to have a lot of pillows. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan luv.
+          <span className={`  ${isTheme? 'text-blue':'text-gray'} capitalize `}>Web & mobile Application developer:</span>The key to more success is to have a lot of pillows. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I&apos;m never giving up, I&apos;m just getting started. I&apos;m up to something. Fan luv.
           </span>
           </span>
         </span>

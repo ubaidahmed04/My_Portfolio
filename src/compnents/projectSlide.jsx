@@ -75,10 +75,10 @@ const ProjectSlide
               <NewCard path={'https://ubaidahmed04.github.io/Quiz_App'} title={'Quiz App'} URL={'/Images/project5.png'} blurImageUrl={project4}
                 description={'A dynamic Quiz App built with React , interactive quizzes, and a sleek user interface. Designed for seamless user experience and efficient data management.'} />
             </div>
-            <div className=''>
+            {/* <div className=''>
               <NewCard path={'https://memebuzz.vercel.app'} title={'Meme Generator'} URL={'/Images/project6.png'} blurImageUrl={project5}
                 description={'Developed a Meme Generator with features that allow users to download custom memes and add draggable, editable text over images for personalized meme creation.'} />
-            </div>
+            </div> */}
            
 
           </Slider>
