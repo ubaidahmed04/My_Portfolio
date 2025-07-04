@@ -14,6 +14,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import GithubContribute from '@/compnents/GithubContribute';
 import { fadeIn, } from '../compnents/variants';
 import { motion } from 'framer-motion';
+import { ScrollProgress } from '@/compnents/scroll';
+import SplashCursor from '@/compnents/mouseGlow';
 export default function Home() {
   const isTheme = useSelector((state) => state.theme.isTheme);
 
@@ -38,17 +40,20 @@ export default function Home() {
   }, [])
   return (
     <div className={`${isTheme ? 'text-blue' : 'text-dark'}`}>
-    <div className='max-w-screen-2xl mx-auto '>
+    <div className='max-w-screen-2xl  mx-auto '>
 
     <ThemeProvider >
       {
         loader ? <div className='h-[100vh] flex justify-center items-center bg-dark'>
           <Loader />
         </div> : (
+          <>
+          <SplashCursor/>
+          
           <main className={` ${isTheme ? 'bg-dark text-dark' : 'bg-light text-light'} `}>
+            <ScrollProgress/>
             <Navigation props={scrollTo} sectionRef={sectionRef} />
             <span className='flex-grow max-w-screen-xl  w-full h-full mx-auto'>
-
             <Herosection />
             <span ref={sectionRef}>
             <About />
@@ -78,7 +83,9 @@ export default function Home() {
             </span>
             </span>
            
-          </main>)
+          </main>
+          </>
+          )
       }
 
     </ThemeProvider>

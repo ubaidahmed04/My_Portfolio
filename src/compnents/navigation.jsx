@@ -33,7 +33,7 @@ function NavList({ props, sectionRef, projectRef, HomeRef, aboutRef }) {
         // color="blue-gray"
         className="font-sans flex items-center"
       >
-        <ListItem onClick={() => props(HomeRef)} className="flex  gap-2 py-2 pr-4 font-bold tracking-wider" >Home</ListItem>
+        <ListItem  onClick={() => props(HomeRef)} className="flex  gap-2 py-2 pr-4 font-bold tracking-wider" >Home</ListItem>
       </Typography>
       <Typography
         as="a"
@@ -85,8 +85,8 @@ export default function Navigation({ props, sectionRef, projectRef, HomeRef, abo
   }, []);
 
   return (
-    <Navbar className={`${isTheme ? 'bg-light ' : 'bg-dark text-light'} min-w-full sticky top-0 z-10 rounded-none`}>
-      <div className="flex items-center justify-between text-blue-gray-900  ">
+    <Navbar className={`${isTheme ? 'bg-light ' : 'bg-dark text-light'}  sticky top-0 z-10 mx-auto w-full border-none rounded-none`}>
+      <div className="flex items-center justify-between text-blue-gray-900 px-4 sm:px-8 w-full ">
         <Typography
           as="a"
           href="#"

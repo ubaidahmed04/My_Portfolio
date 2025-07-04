@@ -11,7 +11,7 @@ const Contactme = () => {
 
     return (
         <>
-            <label className="popup">
+            <label className="popup z-10">
                 <input type="checkbox" />
                 <div tabIndex={0} className="burger">
 

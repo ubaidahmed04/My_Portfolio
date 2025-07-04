@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export function ProjectCard({path,URL,title,description}) {
   return (
-    <Card className="w-full flex-shrink-0 flex flex-col flex-wrap">
+    <Card className="w-full flex-shrink-0 flex flex-col flex-wrap h-[50vh]">
   <CardHeader
     shadow={false}
     floated={false}

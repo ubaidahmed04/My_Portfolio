@@ -28,7 +28,7 @@ function Herosection() {
   // redirect to Gmail 
 
   return (
-    <div className="flex flex-col md:flex-row sm:px-10 pt-5 pb-24 justify-between overflow-x-hidden">
+    <div className="flex flex-col md:flex-row sm:px-10 pt-5  justify-between items-center overflow-">
       <motion.div
         variants={fadeIn('right', 0.2)}
         initial="hidden"
@@ -36,7 +36,7 @@ function Herosection() {
         viewport={{ once: false, amount: 0.7 }}
         className="flex flex-col p-4 md:w-[500px]"
       >
-        <span className={`text-4xl md:text-6xl font-extrabold ${isTheme ? 'text-blue' : 'text-dark'}`}>Hi </span>
+        <span className={`text-4xl md:text-6xl font-extrabold  ${isTheme ? 'text-blue' : 'text-dark'}`}>Hi </span>
         <span className={`text-4xl md:text-6xl font-extrabold ${isTheme ? 'text-blue' : 'text-dark'}`}>
           I&apos;M <span className={`text-4xl md:text-6xl font-extrabold ${isTheme ? 'text-light' : 'text-dark'}  pt-3`}>Ubaid</span>
         </span>

@@ -21,7 +21,7 @@ const ProfileCard = () => {
       <div className="p-4 text-center flex flex-col items-center ">
         <div className="relative bottom-16">
         <Image
-          src="/Images/logo.jpg"
+          src="/Images/ubaid.jpeg"
           alt="Profile Picture"
           width={500}
           height={300}

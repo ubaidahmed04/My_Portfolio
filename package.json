@@ -12,9 +12,11 @@
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
+    "@react-three/drei": "^10.4.2",
+    "@react-three/fiber": "^9.2.0",
     "@reduxjs/toolkit": "^2.2.7",
     "formik": "^2.4.6",
-    "framer-motion": "^11.3.22",
+    "framer-motion": "^11.18.2",
     "gsap": "^3.12.5",
     "jspdf": "^2.5.1",
     "next": "14.2.5",
@@ -27,6 +29,7 @@
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.12.4",
+    "three": "^0.178.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
