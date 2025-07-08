@@ -57,6 +57,7 @@ export default function ContactSection() {
             <label className="block text-sm mb-2">Your name</label>
             <Input
               label="What's your good name?"
+              color="#fafafa"
               name="name"
               value={formik.values.name}
               onChange={formik.handleChange}
@@ -72,6 +73,7 @@ export default function ContactSection() {
               value={formik.values.email}
               onChange={formik.handleChange}
               error={formik.touched.email && Boolean(formik.errors.email)}
+              color="#fafafa"
             />
           </div>
 
@@ -80,6 +82,7 @@ export default function ContactSection() {
             <Textarea
               label="How can I help you?"
               name="message"
+              color="#fafafa"
               value={formik.values.message}
               onChange={formik.handleChange}
               error={formik.touched.message && Boolean(formik.errors.message)}
