@@ -13,7 +13,7 @@ function Experience() {
     whileInView={"show"}
     viewport={{ once: false, amount: 0.9 }}
     className=' xl:py-[100px] pt-20  sm:px-14 px-6  py-20'>
-      <span className='flex md:flex-row gap-4 flex-col h-[50vh]'>
+      <span className='flex md:flex-row gap-4 flex-col h-* md:h-[50vh]'>
         <span className='xl:w-1/2'>
         <span className={`text-4xl md:text-6xl font-semibold font-agustina ${isTheme? 'text-light':'text-dark'} text-shadow-custom`}>
           Experience

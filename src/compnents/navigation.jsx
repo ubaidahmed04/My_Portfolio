@@ -33,26 +33,27 @@ function NavList({ props, sectionRef, projectRef, HomeRef, aboutRef }) {
         // color="blue-gray"
         className="font-sans flex items-center"
       >
-        <ListItem  onClick={() => props(HomeRef)} className="flex  gap-2 py-2 pr-4 font-bold tracking-wider" >Home</ListItem>
+        <ListItem onClick={() => props(HomeRef)} className="flex  gap-2 py-2 pr-4 font-bold tracking-wider text-lg" >Home</ListItem>
       </Typography>
+
       <Typography
         as="a"
 
         variant="small"
         // color="blue-gray"
-        className="font-sans flex justify-center flex-col lg:flex-row gap-3 items-center w-full"
+        className=" flex justify-center flex-col font-serif  lg:flex-row gap-3 items-center w-full"
       >
-        <ListItem onClick={() => props(sectionRef)} className="flex items-center gap-2 py-2 w-full pr-4 font-bold  tracking-wider">
+        <ListItem onClick={() => props(aboutRef)} className="flex items-center gap-2 text-lg w-full py-2 pr-4 font-bold tracking-wider">
+          About
+        </ListItem>
+        <ListItem onClick={() => props(projectRef)} className="flex items-center gap-2 w-full text-lg py-2 pr-4 font-bold tracking-wider">
+          Project
+        </ListItem>
+        <ListItem onClick={() => props(sectionRef)} className="flex items-center gap-2 py-2 w-full text-lg pr-4 font-bold  tracking-wider">
           Contact
         </ListItem>
 
-        <ListItem onClick={() => props(projectRef)} className="flex items-center gap-2 w-full py-2 pr-4 font-bold tracking-wider">
-          project
-        </ListItem>
-        <ListItem onClick={() => props(aboutRef)} className="flex items-center gap-2 w-full py-2 pr-4 font-bold tracking-wider">
-          About
-        </ListItem>
-        <span className="flex items-center gap-2 py-2 w-full pr-4 font-bold tracking-wider">
+        {/* <span className="flex items-center gap-2 py-2 w-full pr-4 font-bold tracking-wider">
       <label className="switch">
         <input 
           type="checkbox" 
@@ -61,7 +62,7 @@ function NavList({ props, sectionRef, projectRef, HomeRef, aboutRef }) {
         />
         <span className="slider"></span>
       </label>
-    </span>
+    </span> */}
       </Typography>
     </List>
   );

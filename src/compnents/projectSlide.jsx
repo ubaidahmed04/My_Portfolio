@@ -52,8 +52,8 @@ export default function ProjectSlider() {
   const isTheme = useSelector((state) => state.theme.isTheme);
 
   return (
-    <div className={` ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>
-      <h2  className={` text-4xl font-bold text-center mb-6 text-shadow-custom ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>My Projects</h2>
+    <div className={` flex justify-center items-center flex-col overflow-hidden ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>
+      <h2  className={` text-4xl font-bold text-center mb-24 text-shadow-custom ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>My Projects</h2>
       <Marquee pauseOnHover className="[--duration:25s]">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />

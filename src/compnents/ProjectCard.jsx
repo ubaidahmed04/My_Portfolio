@@ -14,7 +14,7 @@ export function ProjectCard({
   return (
     <div className="w-[280px] sm:w-[320px] md:w-[360px] bg-gray bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 mx-3">
       {/* Image */}
-      <div className="relative h-44">
+      <div className="relative md:h-44 h-36">
         <Image
           src={URL}
           alt={title}
