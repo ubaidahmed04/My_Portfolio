@@ -16,6 +16,9 @@ import { fadeIn, } from '../compnents/variants';
 import { motion } from 'framer-motion';
 import { ScrollProgress } from '@/compnents/scroll';
 import SplashCursor from '@/compnents/mouseGlow';
+import { IconCloud } from '@/components/magicui/icon-cloud';
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
+import { IconCloudComponent } from '@/compnents/IconCloud';
 export default function Home() {
   const isTheme = useSelector((state) => state.theme.isTheme);
 
@@ -48,19 +51,21 @@ export default function Home() {
           <Loader />
         </div> : (
           <>
-          <SplashCursor/>
+          {/* <SplashCursor/> */}
           
           <main className={` ${isTheme ? 'bg-dark text-dark' : 'bg-light text-light'} `}>
-            <ScrollProgress/>
+            {/* <ScrollProgress/> */}
+
             <Navigation props={scrollTo} sectionRef={sectionRef} />
-            <span className='flex-grow max-w-screen-xl  w-full h-full mx-auto'>
+            <span className='flex-grow max-w--2xl min-h-screen w-full  mx-auto'>
             <Herosection />
             <span ref={sectionRef}>
             <About />
             </span>
             <Experience />
+            {/* <MarqueeDemo/> */}
             <ProjectSlide />
-            {/* <TextCard/> */}
+            {/*  <TextCard/>  */}
             <motion.div
               variants={fadeIn('up', 0.2)}
               initial="hidden"
@@ -75,12 +80,15 @@ export default function Home() {
               <Cardlink path="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
             </motion.div>
             <span>
+              <IconCloudComponent/>
+            </span>
+            <span>
               <GithubContribute />
             </span>
             <span ref={sectionRef}>
               <ContactSec />
-
             </span>
+          <SmoothCursor/>
             </span>
            
           </main>

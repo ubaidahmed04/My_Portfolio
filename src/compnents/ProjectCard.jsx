@@ -1,61 +1,50 @@
-import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+"use client";
+
 import Image from "next/image";
+import { Button } from "@material-tailwind/react";
 
-export function ProjectCard({path,URL,title,description}) {
+export function ProjectCard({
+  title,
+  description,
+  URL,
+  path,
+  blurImageUrl,
+  stackIcons = [],
+}) {
   return (
-    <Card className="w-full flex-shrink-0 flex flex-col flex-wrap h-[50vh]">
-  <CardHeader
-    shadow={false}
-    floated={false}
-    // className="bg-blue-gray-100"
-  >
-    <Image
-      src={URL}
-      alt="card-image"
-      height={1000}
-      width={1000}
-      className="w-full h-full object-cover "
-    />
-  </CardHeader>
-  <CardBody className="bg-[#373737] hover:bg-[#607D8B] cursor-pointer text-cyan-200 flex flex-col justify-between  sm:p-6">
-    <div>
-     
-      <Typography variant="h4" className="mb-2 text-base sm:text-lg md:text-xl">
-       {title}
-      </Typography>
-      <Typography className="mb-4 text-sm sm:text-base md:text-lg font-normal">
-      {description}
-      </Typography>
+    <div className="w-[280px] sm:w-[320px] md:w-[360px] bg-gray bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 mx-3">
+      {/* Image */}
+      <div className="relative h-44">
+        <Image
+          src={URL}
+          alt={title}
+          layout="fill"
+          objectFit="contain"
+          className="hover:scale-105 transition-transform duration-500"
+          placeholder="blur"
+          blurDataURL={blurImageUrl}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-4 flex flex-col justify-between h-[220px]">
+        <div>
+          <h4 className="text-light text-lg font-semibold">{title}</h4>
+          <p className="text-light text-sm mt-2 line-clamp-3">{description}</p>
+        </div>
+
+        <div className="flex gap-2 mt-4 text-xl text-white/80 flex-wrap">
+          {stackIcons.map((Icon, index) => (
+            <Icon key={index} />
+          ))}
+        </div>
+
+        <a href={path} target="_blank" rel="noopener noreferrer" className="mt-4">
+          <Button className="bg-white text-black text-xs hover:bg-gray-200 w-full transition-transform hover:scale-105">
+            Live Preview →
+          </Button>
+        </a>
+      </div>
     </div>
-    <a href={path} className="inline-block">
-
-      <Button variant="text" className="flex boton-elegante items-center gap-2 text-xs sm:text-sm md:text-md">
-        Explore
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-          className="h-4 w-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-          />
-        </svg>
-      </Button>
-    </a>
-  </CardBody>
-</Card>
-
   );
 }

@@ -1,90 +1,64 @@
-import React from 'react'
-import Slider from "react-slick";
-import { NewCard } from './NewCard';
-import { useSelector } from 'react-redux';
-import { fadeIn, } from './variants';
-import { motion } from 'framer-motion';
-import { project1, project2, project3, project4, project5 } from '@/app/Const/Base64';
-const ProjectSlide
-  = () => {
-    const isTheme = useSelector((state) => state.theme.isTheme);
+"use client";
 
-    const settings = {
-      dots: false,
-      infinite: true,
-      slidesToShow: 2, // Default number of slides to show
-      slidesToScroll: 1,
-      autoplay: true,
-      // speed: 4000,
-      autoplaySpeed: 3000,
-      cssEase: "linear",
-      responsive: [
-        {
-          breakpoint: 500, // For small screens (sm)
-          settings: {
-            slidesToShow: 1, // Show 1 slide
-          }
-        },
-        {
-          breakpoint: 768, // For medium screens (md)
-          settings: {
-            slidesToShow: 1, // Show 2 slides
-          }
-        },
-        {
-          breakpoint: 1024, // For large screens (lg)
-          settings: {
-            slidesToShow: 2, // Show 3 slides
-          }
-        }
+import { ProjectCard } from "./ProjectCard";
+import { Marquee } from "@/components/magicui/marquee";
+import {
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiMongodb,
+  SiNextdotjs,
+  SiOpenai,
+  SiExpress,
+} from "react-icons/si";
+import { useSelector } from "react-redux";
 
-      ]
-    };
+const projects = [
+  {
+    title: "Weather App",
+    description: "Weather App using MongoDB, Express, React, Node.js, and Tailwind CSS.",
+    URL: "/Images/project2.png",
+    path: "https://skypulse.vercel.app/",
+    blurImageUrl: "/images/mern-blur.jpg",
+    stackIcons: [SiMongodb,  SiReact, SiNodedotjs, SiTailwindcss],
+  },
+  {
+    title: "Quiz App",
+    description: "Markdown blog with MDX support and TailwindCSS styling.",
+    URL: "/Images/project5.png",
+    path: "https://sit-quizapp.vercel.app",
+    blurImageUrl: "/images/next-blog-blur.jpg",
+    stackIcons: [SiReact, SiTailwindcss,SiNodedotjs],
+  },
+  {
+    title: "Mystical Fragrance",
+    description: "AI assistant powered by OpenAI APIs with full frontend integration.",
+    URL: "/Images/Mystical.PNG",
+    path: "https://www.mysticalfragrance.com/",
+    blurImageUrl: "/images/ai-agent-blur.jpg",
+    stackIcons: [SiReact,SiExpress, SiTailwindcss,SiMongodb, SiNextdotjs],
+  },
+  {
+    title: "Nubitsoft",
+    description: "AI assistant powered by OpenAI APIs with full frontend integration.",
+    URL: "/Images/nubitProject.png",
+    path: "https://nubitsoft.com/",
+    blurImageUrl: "/images/ai-agent-blur.jpg",
+    stackIcons: [SiReact, SiExpress, SiTailwindcss,SiMongodb, SiNextdotjs],
+  },
+];
 
+export default function ProjectSlider() {
+  const isTheme = useSelector((state) => state.theme.isTheme);
 
-    return (
-      <motion.div
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.9 }}>
-        <span className={`text-4xl ${isTheme ? 'text-light' : 'text-dark'} md:text-6xl py-12 sm:px-14 px-6  font-semibold font-agustina  text-shadow-custom`}>
-          Projects
-        </span>
-        <div className={`slider-container ${isTheme ? 'text-light bg-dark' : 'text-dark bg-light'}  sm:px-14 px-6 py-12`}>
-
-
-          <Slider {...settings}>
-            <div className=''>
-              <NewCard path={'https://nubitsoft.com'} title={'Nubitsoft'} URL={'/Images/nubitProject.png'} blurImageUrl={project1}
-                description={'Built a responsive and visually appealing website for Nubitsoft, featuring their services, portfolio, and client testimonials. Implemented dynamic content management and intuitive navigation to enhance user engagement and showcase the brand effectively.'} />
-            </div>
-            <div className=''>
-              <NewCard path={'https://www.mysticalfragrance.com/'} title={'E-commerce'} URL={'/Images/mysticalProject.png'} blurImageUrl={project5}
-                description={'Designed and developed a visually captivating and responsive eCommerce website tailored for mystical fragrances. The platform features dynamic product showcases, seamless navigation, and a sophisticated user experience that evokes a sense of luxury and mystique. This live website is now driving sales, enabling customers to explore and purchase premium fragrances effortlessly.'} />
-            </div>
-            <div className=''>
-              <NewCard path={'https://skypulse.vercel.app'} title={'Weather App'} URL={'/Images/project2.png'} blurImageUrl={project2}
-                description={'A responsive Weather App that provides real-time weather updates for any location, featuring a sleek UI and integrated with an API for accurate forecasts.'} />
-            </div>
-            <div className=''>
-              <NewCard path={'https://dailytask-opal.vercel.app'} title={'Daily-Task'} URL={'/Images/project3.png'} blurImageUrl={project3}
-                description={'A sleek and intuitive daily task manager that helps you organize and prioritize your to-dos effortlessly. Stay productive by tracking your progress and managing your tasks efficiently.'} />
-            </div>
-            <div className=''>
-              <NewCard path={'https://ubaidahmed04.github.io/Quiz_App'} title={'Quiz App'} URL={'/Images/project5.png'} blurImageUrl={project4}
-                description={'A dynamic Quiz App built with React , interactive quizzes, and a sleek user interface. Designed for seamless user experience and efficient data management.'} />
-            </div>
-            {/* <div className=''>
-              <NewCard path={'https://memebuzz.vercel.app'} title={'Meme Generator'} URL={'/Images/project6.png'} blurImageUrl={project5}
-                description={'Developed a Meme Generator with features that allow users to download custom memes and add draggable, editable text over images for personalized meme creation.'} />
-            </div> */}
-           
-
-          </Slider>
-        </div>
-      </motion.div>
-    )
-  }
-
-export default ProjectSlide
+  return (
+    <div className={` ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>
+      <h2  className={` text-4xl font-bold text-center mb-6 text-shadow-custom ${isTheme ? 'bg-dark text-light' : 'bg-light text-dark'} `}>My Projects</h2>
+      <Marquee pauseOnHover className="[--duration:25s]">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </Marquee>
+    </div>
+  );
+}

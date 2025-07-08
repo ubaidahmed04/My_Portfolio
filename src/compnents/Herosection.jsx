@@ -36,9 +36,9 @@ function Herosection() {
         viewport={{ once: false, amount: 0.7 }}
         className="flex flex-col p-4 md:w-[500px]"
       >
-        <span className={`text-4xl md:text-6xl font-extrabold  ${isTheme ? 'text-blue' : 'text-dark'}`}>Hi </span>
-        <span className={`text-4xl md:text-6xl font-extrabold ${isTheme ? 'text-blue' : 'text-dark'}`}>
-          I&apos;M <span className={`text-4xl md:text-6xl font-extrabold ${isTheme ? 'text-light' : 'text-dark'}  pt-3`}>Ubaid</span>
+        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom ${isTheme ? 'text-light' : 'text-dark'}`}>Hi </span>
+        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom ${isTheme ? 'text-light' : 'text-dark'}`}>
+          I&apos;M <span className={`text-4xl md:text-6xl font-extrabold shadow-none ${isTheme ? 'text-blue' : 'text-dark'}  pt-3`}>Ubaid</span>
         </span>
 
         <span className={`text-lg md:text-2xl font-serif ${isTheme ? 'text-light' : 'text-dark'} pt-3 leading-relaxed`}>

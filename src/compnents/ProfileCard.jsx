@@ -35,7 +35,7 @@ const ProfileCard = () => {
         <div className=" mb-2 text-xl md:text-2xl text-light font-semibold text-shadow-custom">
           Ubaid Ahmed
         </div>
-        <div className="text-gray-600 text-base md:text-lg">
+        <div className="text-light text-base md:text-lg">
           Web Development
         </div>
 
@@ -66,7 +66,9 @@ const ProfileCard = () => {
               </a>
             </li>
           </ul>
+
         </div>
+      
       </div>
     </div>
   );
