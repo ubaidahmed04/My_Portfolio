@@ -11,6 +11,7 @@ import jsPDF from 'jspdf';
 import Contactme from './Contactme';
 import Image from 'next/image';
 import {proflieBase64} from '../app/Const/Base64'
+import { IconCloudComponent } from './IconCloud';
 function Herosection() {
   const isTheme = useSelector((state) => state.theme.isTheme);
   // dowload PDF 
@@ -28,20 +29,20 @@ function Herosection() {
   // redirect to Gmail 
 
   return (
-    <div className="flex flex-col md:flex-row sm:px-10 pt-5  justify-between items-center overflow-">
+    <div className="flex flex-col  md:flex-row sm:px-10 pt-5  justify-between items-center overflow-">
       <motion.div
         variants={fadeIn('right', 0.2)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
-        className="flex flex-col p-4 md:w-[500px]"
+        className="flex flex-col p-4 md:w-[500px] "
       >
-        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom ${isTheme ? 'text-light' : 'text-dark'}`}>Hi </span>
-        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom ${isTheme ? 'text-light' : 'text-dark'}`}>
+        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom text-dark`}>Hi </span>
+        <span className={`text-4xl md:text-6xl font-extrabold text-shadow-custom text-dark`}>
           I&apos;M <span className={`text-4xl md:text-6xl font-extrabold shadow-none ${isTheme ? 'text-blue' : 'text-dark'}  pt-3`}>Ubaid</span>
         </span>
 
-        <span className={`text-lg md:text-2xl font-serif ${isTheme ? 'text-light' : 'text-dark'} pt-3 leading-relaxed`}>
+        <span className={`text-lg md:text-2xl font-serif text-light pt-3 leading-relaxed`}>
           A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nextjs / React Native and some other cool libraries and frameworks.
         </span>
         <Socialmedia />
@@ -63,17 +64,19 @@ function Herosection() {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
-        className="hidden md:block md:w-[400px] md:ml-8"
+        className="hidden md:block md:w-[400px] md:ml-8 bg-red-200x"
       >
-        <Image
+        {/* <Image
           src="/Images/avatarimg.png"
           alt="Description of the image"
           width={500}
           height={300}
           placeholder="blur"
           blurDataURL={proflieBase64}
-        />
-       
+        /> */}
+       <span>
+              <IconCloudComponent/>
+            </span>
       </motion.div>
     </div>
   );

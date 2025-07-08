@@ -36,7 +36,7 @@ export function IconCloudComponent() {
   );
 
   return (
-    <div className="relative flex size-full items-center justify-end overflow-hidden">
+    <div className="relative flex size-full items-center justify-center ">
       <IconCloud images={images} />
     </div>
   );

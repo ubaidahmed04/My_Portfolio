@@ -9,6 +9,7 @@ import ScrollxSection from '@/compnents/ScrollScreen';
 import ProjectSlide from '@/compnents/projectSlide';
 import About from '@/compnents/About';
 import Experience from '@/compnents/Experience';
+import Exp from '@/compnents/exp';
 import Loader from '@/compnents/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import GithubContribute from '@/compnents/GithubContribute';
@@ -62,9 +63,9 @@ export default function Home() {
             <span ref={aboutRef} >
             <About />
             </span>
-            {/* <section className="scroll-mt-24">
-            <Experience />
-            </section> */}
+            <section className="scroll-mt-24">
+            <Exp />
+            </section>
 
             <section className="pt-20 pb-28" ref={projectRef}  >
             <ProjectSlide />
@@ -82,9 +83,7 @@ export default function Home() {
               <Cardlink path="M23.546 10.73L13.27.454a1.551 1.551 0 00-2.192 0l-2.1 2.1 2.839 2.839a2.54 2.54 0 013.13 3.13l2.82 2.82a2.54 2.54 0 11-1.062 1.062l-2.69-2.69v6.19a2.54 2.54 0 11-1.5-.05v-6.14a2.54 2.54 0 01-1.2-3.25L7.665 4.59l-6.211 6.2a1.551 1.551 0 000 2.191l10.276 10.276a1.551 1.551 0 002.191 0L23.546 12.92a1.551 1.551 0 000-2.191z" />
               <Cardlink path="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
             </motion.div> */}
-            <span>
-              <IconCloudComponent/>
-            </span>
+            
             <span>
               <GithubContribute />
             </span>

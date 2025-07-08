@@ -1,171 +1,127 @@
-import React, { useRef } from "react";
-import "./Contact.css";
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { Card, Input, Button } from "@material-tailwind/react";
-import Icon from "./Icon";
-import { motion } from 'framer-motion';
-import { fadeIn, } from './variants';
-import Socialmedia from "./Socialmedia";
-import { useSelector } from "react-redux";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import emailjs from '@emailjs/browser';
-import Swal from "sweetalert2";
+"use client";
 
-// add yup  Formik 
-const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Name is too short!')
-    .max(50, 'Name is too long!')
-    .required('Name is required'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Email is required'),
-  subject: Yup.string()
-    .min(5, 'Subject is too short!')
-    .required('Subject is required'),
-  message: Yup.string()
-    .min(10, 'Message is too short!')
-    .required('Message is required'),
-});
-// add EmailJS 
-const sendEmail = (values) => {
-  emailjs.send(
-    'service_dttlny9',
-    'template_akza2cj',
-    {
-      to_name: 'Ubaid Ahmed',
-      from_name: values.name, 
-      message: values.message, 
-      from_email: values.email, 
-      reply_to: values.email,  
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Environment } from "@react-three/drei";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { Button, Input, Textarea } from "@material-tailwind/react";
+import { motion } from "framer-motion";
+import Computer from "./computer"; 
+
+export default function ContactSection() {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
     },
-    'xZzt_m_2tW7AHgdJu'
-  ).then((result) => {
-    console.log('Email sent successfully:', result.text);
-    Swal.fire({
-      title: 'Success',
-      text: 'Email Sent Successfully',
-      icon: 'success',
-      confirmButtonText: 'OK'
-    });
-  }).catch((error) => {
-    console.log('Failed to send email:', error.text);
-    Swal.fire({
-      title: 'Opps...',
-      text: 'Something Wrong',
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+    validationSchema: Yup.object({
+      name: Yup.string().required("Required"),
+      email: Yup.string().email("Invalid email").required("Required"),
+      message: Yup.string().required("Required"),
+    }),
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+      resetForm();
+      alert("Message sent successfully!");
+    },
   });
-};
-function ContactSec() {
-  const isTheme = useSelector((state) => state.theme.isTheme);
 
-  //  for from validation zod library use in nextjs
   return (
-    <motion.div
-      variants={fadeIn('up', 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.4 }}
-      className=" p-2 py-28   overflow-x-hidden">
+    <div className="w-full px-6 sm:px-12 py-12 bg-dark text-white">
       <div className="text-center mb-10">
-        <b className={`  ${isTheme ? 'text-light' : 'text-dark'}  contact-heading  text-3xl font-bold`}>Get in Touch</b>
-        <span className={`text-lg block mt-2 ${isTheme ? 'text-teal-200' : 'text-teal-500'}`} >Ask Any Question Or Remarks? Just write a Message!</span>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="inline-block text-sm bg-gray-800 px-4 py-1 rounded-full mb-2">
+            💬 Have questions or ideas? Let’s talk!
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Get in Touch – Let’s Connect
+          </h2>
+        </motion.div>
       </div>
-      <div className="mx-auto rounded-4 sm:p-8  overflow-hidden">
-        <div className={`contact-links ${isTheme ? 'text-light' : 'text-dark'}   flex flex-col lg:flex-row gap-10`}>
-          <div className="lg:w-1/2">
-            <div className="flex flex-col">
-              <span className="text-2xl sm:text-4xl font-extrabold tracking-wider italic">Contact Information</span>
-              <span className={`${isTheme ? 'text-teal-200' : 'text-teal-500'}  mt-2`}>Say something to start a live chat!</span>
-            </div>
-            <div className="social-link flex flex-col gap-6 mt-8">
-              <div className="flex items-center gap-3">
-                <FaWhatsapp className={`text-2xl ${isTheme ? 'text-teal-200' : 'text-teal-500'}`} />
-                <span className={`text-lg font-medium ${isTheme ? 'text-teal-200' : 'text-teal-500'}`}>+92 3127718780</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaEnvelope className={`text-2xl ${isTheme ? 'text-teal-200' : 'text-teal-500'}`} />
-                <span className={`text-lg font-medium ${isTheme ? 'text-teal-200' : 'text-teal-500'}`}>ubaidahmed2040@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <FaMapMarkerAlt className={`text-2xl ${isTheme ? 'text-teal-200' : 'text-teal-500'}`} />
-                <span className={`text-lg font-medium ${isTheme ? 'text-teal-200' : 'text-teal-500'}`}>75800 Karachi PK</span>
-              </div>
-              <div className="flex gap-4 mt-6">
-                <Socialmedia />
-                {/* <Icon /> */}
-              </div>
-            </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* ✅ FORM SECTION */}
+        <motion.form
+          onSubmit={formik.handleSubmit}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-gray rounded-xl p-6 md:p-8"
+        >
+          <div className="mb-6">
+            <label className="block text-sm mb-2">Your name</label>
+            <Input
+              label="What's your good name?"
+              name="name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+            />
           </div>
-          <div className="lg:w-1/2 bg-gray-300 p-3 rounded-md bg-blue-gray-300 hover:shadow-custom-hover py-5">
-          {/* add formik yup  */}
-            <Formik
-              initialValues={{ name: '', email: '', subject: '', message: '' }}
-              validationSchema={SignupSchema}
-              onSubmit={(values,{resetForm}) => {
-                console.log(values);
-                sendEmail(values);
-              
-                resetForm()
-              }}
-            >
-              {({ isSubmitting }) => (
-                <Form className="flex flex-col gap-6">
-                  <div>
-                    <Field
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                      className="w-full p-2 rounded-md text-dark bg-light border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <ErrorMessage name="name" component="div" className="text-red-600 mt-1 text-sm" />
-                  </div>
-                  <div>
-                    <Field
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      className="w-full p-2 text-dark bg-light rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <ErrorMessage name="email" component="div" className="text-red-500 mt-1 text-sm" />
-                  </div>
-                  <div>
-                    <Field
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
-                      className="w-full p-2 text-dark bg-light rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <ErrorMessage name="subject" component="div" className="text-red-500 mt-1 text-sm" />
-                  </div>
-                  <div>
-                    <Field
-                      as="textarea"
-                      name="message"
-                      placeholder="Compose your message here"
-                      rows={4}
-                      className="w-full text-dark bg-light p-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <ErrorMessage name="message" component="div" className="text-red-500 mt-1 text-sm" />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#20B2AA] shadow-custom hover:shadow-custom-hover transition-shadow duration-300 hover:bg-black hover:text-light font-bold rounded py-3"
-                  >
-                    Submit
-                  </button>
-                </Form>
-              )}
-            </Formik>
+
+          <div className="mb-6">
+            <label className="block text-sm mb-2">Your Email</label>
+            <Input
+              label="What's your email address?"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+            />
           </div>
-        </div>
+
+          <div className="mb-6">
+            <label className="block text-sm mb-2">Your Message</label>
+            <Textarea
+              label="How can I help you?"
+              name="message"
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              error={formik.touched.message && Boolean(formik.errors.message)}
+              rows={6}
+            />
+          </div>
+
+          <Button
+            type="submit"
+            fullWidth
+            className="bg-light text-black hover:scale-[1.01] transition-all"
+          >
+            SEND MESSAGE
+          </Button>
+        </motion.form>
+
+        {/* ✅ CANVAS SECTION */}
+        <motion.div
+          className="w-full h-[400px] rounded-xl overflow-hidden bg-[#d97336]"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Canvas shadows camera={{ position: [0, 3, 7], fov: 45 }}>
+            <ambientLight intensity={0.5} color="#fff4e6" />
+            <directionalLight position={[5, 5, 3]} intensity={2.5} color="#ffd9b3" />
+            <directionalLight position={[5, 9, 1]} castShadow intensity={2.5} color="#ffd9b3" />
+            <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 5} maxPolarAngle={Math.PI / 2} />
+
+            {/* GROUND PLANE */}
+            <mesh receiveShadow position={[0, -1.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[30, 30]} />
+              <meshStandardMaterial color="#a46b2d" />
+            </mesh>
+
+            {/* ✅ 3D MODEL */}
+            <group scale={0.03} position={[0, -1.49, -2]} castShadow>
+              <Computer />
+            </group>
+          </Canvas>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
-
-export default ContactSec;

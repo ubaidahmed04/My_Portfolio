@@ -12,7 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
-    "@react-three/drei": "^9.74.15",
+    "@react-three/drei": "^10.4.4",
     "@react-three/fiber": "^8.13.3",
     "@reduxjs/toolkit": "^2.2.7",
     "class-variance-authority": "^0.7.1",
@@ -36,7 +36,7 @@
     "sweetalert2": "^11.12.4",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.153.0",
+    "three": "^0.160.1",
     "yup": "^1.4.0"
   },
   "devDependencies": {
