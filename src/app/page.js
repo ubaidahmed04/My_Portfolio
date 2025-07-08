@@ -54,7 +54,7 @@ export default function Home() {
           {/* <SplashCursor/> */}
           
           <main className={` ${isTheme ? 'bg-dark text-dark' : 'bg-light text-light'} `}>
-            {/* <ScrollProgress/> */}
+            <ScrollProgress/>
 
             <Navigation props={scrollTo} sectionRef={sectionRef} />
             <span className='flex-grow max-w--2xl min-h-screen w-full  mx-auto'>

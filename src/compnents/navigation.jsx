@@ -93,8 +93,8 @@ export default function Navigation({ props, sectionRef, projectRef, HomeRef, abo
           variant="h3"
           className="mr-4 cursor-pointer flex items-center"
         >
-          {/* <span className="block  font-serif text-xl sm:text-4xl italic text-shadow-custom">{"< Ubaid "}</span>
-          <span className="block  font-serif text-xl sm:text-4xl italic text-shadow-custom">{"Ahmed / >"}</span> */}
+          <span className="block  font-serif text-xl sm:text-4xl italic text-shadow-custom">{"< Ubaid "}</span>
+          <span className="block  font-serif text-xl sm:text-4xl italic text-shadow-custom">{"Ahmed / >"}</span>
         </Typography>
         <div className="hidden lg:flex ">
           <NavList props={props} sectionRef={sectionRef} projectRef={projectRef} aboutRef={aboutRef} HomeRef={HomeRef} />
