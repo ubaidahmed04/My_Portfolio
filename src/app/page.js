@@ -15,7 +15,7 @@ import GithubContribute from '@/compnents/GithubContribute';
 import { fadeIn, } from '../compnents/variants';
 import { motion } from 'framer-motion';
 import { ScrollProgress } from '@/compnents/scroll';
-import SplashCursor from '@/compnents/mouseGlow';
+// import SplashCursor from '@/compnents/mouseGlow';
 import { IconCloud } from '@/components/magicui/icon-cloud';
 import { SmoothCursor } from '@/components/ui/smooth-cursor';
 import { IconCloudComponent } from '@/compnents/IconCloud';
