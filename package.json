@@ -12,7 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
-    "@react-three/drei": "^10.5.0",
+    "@react-three/drei": "^9.74.3",
     "@react-three/fiber": "^9.2.0",
     "@reduxjs/toolkit": "^2.2.7",
     "class-variance-authority": "^0.7.1",
